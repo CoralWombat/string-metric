@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LevenshteinDistanceMetricTest {
 
@@ -17,6 +18,11 @@ class LevenshteinDistanceMetricTest {
     @Test
     void measureTest() {
         assertDoesNotThrow(() -> levenshteinDistanceMetric.measure("", ""));
+
+        assertEquals(0, levenshteinDistanceMetric.measure("Testing!","Testing!"));
+        assertEquals(3, levenshteinDistanceMetric.measure("kitten", "sitting"));
+        assertEquals(31, levenshteinDistanceMetric.measure("Testing!","This is almost completely different."));
+        assertEquals(5, levenshteinDistanceMetric.measure("abcde","fghij"));
     }
 
 }
