@@ -15,6 +15,7 @@ class StringMetricFactoryTest {
         );
 
         assertDoesNotThrow(() -> StringMetricFactory.getStringMetric(StringMetricType.LEVENSHTEIN_DISTANCE));
+        assertDoesNotThrow(() -> StringMetricFactory.getStringMetric(StringMetricType.DAMERAU_LEVENSHTEIN_DISTANCE));
     }
 
 }

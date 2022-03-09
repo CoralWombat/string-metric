@@ -6,9 +6,11 @@ import lombok.NonNull;
 public interface StringMetricFactory {
 
     static StringMetric getStringMetric(@NonNull StringMetricType stringMetricType) {
-        switch (stringMetricType){
+        switch (stringMetricType) {
             case LEVENSHTEIN_DISTANCE:
                 return new LevenshteinDistanceMetric();
+            case DAMERAU_LEVENSHTEIN_DISTANCE:
+                return new DamerauLevenshteinDistanceMetric();
         }
         throw new StringMetricNotFoundException(stringMetricType);
     }
