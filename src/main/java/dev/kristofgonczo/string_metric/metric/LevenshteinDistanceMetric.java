@@ -1,8 +1,7 @@
 package dev.kristofgonczo.string_metric.metric;
 
+import dev.kristofgonczo.string_metric.util.NumberUtil;
 import lombok.NonNull;
-
-import java.util.Arrays;
 
 class LevenshteinDistanceMetric implements StringMetric {
 
@@ -17,7 +16,7 @@ class LevenshteinDistanceMetric implements StringMetric {
                 } else if (j == 0) {
                     dp[i][j] = i;
                 } else {
-                    dp[i][j] = min(dp[i - 1][j - 1] + costOfSubstitution(string1.charAt(i - 1), string2.charAt(j - 1)),
+                    dp[i][j] = NumberUtil.min(dp[i - 1][j - 1] + costOfSubstitution(string1.charAt(i - 1), string2.charAt(j - 1)),
                             dp[i - 1][j] + 1,
                             dp[i][j - 1] + 1);
                 }
@@ -27,12 +26,8 @@ class LevenshteinDistanceMetric implements StringMetric {
         return dp[string1.length()][string2.length()];
     }
 
-    public static int costOfSubstitution(char a, char b) {
+    private static int costOfSubstitution(char a, char b) {
         return a == b ? 0 : 1;
-    }
-
-    public static int min(int... numbers) {
-        return Arrays.stream(numbers).min().orElse(Integer.MAX_VALUE);
     }
 
 }
