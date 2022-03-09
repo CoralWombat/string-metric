@@ -1,7 +1,8 @@
-package dev.kristofgonczo.string_metric;
+package dev.kristofgonczo.string_metric.metric;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class StringMetricFactoryTest {
@@ -12,6 +13,8 @@ class StringMetricFactoryTest {
                 NullPointerException.class,
                 () -> StringMetricFactory.getStringMetric(null)
         );
+
+        assertDoesNotThrow(() -> StringMetricFactory.getStringMetric(StringMetricType.LEVENSHTEIN_DISTANCE));
     }
 
 }

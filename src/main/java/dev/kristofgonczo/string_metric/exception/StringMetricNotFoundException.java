@@ -1,6 +1,6 @@
 package dev.kristofgonczo.string_metric.exception;
 
-import dev.kristofgonczo.string_metric.StringMetricType;
+import dev.kristofgonczo.string_metric.metric.StringMetricType;
 
 public class StringMetricNotFoundException extends RuntimeException {
 

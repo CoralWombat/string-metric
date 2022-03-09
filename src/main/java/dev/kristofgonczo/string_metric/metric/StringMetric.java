@@ -1,4 +1,4 @@
-package dev.kristofgonczo.string_metric;
+package dev.kristofgonczo.string_metric.metric;
 
 import lombok.NonNull;
 
