@@ -5,6 +5,10 @@ import lombok.NonNull;
 
 public interface StringMetricFactory {
 
+    /**
+     * @param stringMetricType The required type of the metric.
+     * @return The requested StringMetric class.
+     */
     static StringMetric getStringMetric(@NonNull StringMetricType stringMetricType) {
         switch (stringMetricType) {
             case LEVENSHTEIN_DISTANCE:
