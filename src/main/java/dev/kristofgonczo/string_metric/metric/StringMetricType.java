@@ -16,8 +16,9 @@ public enum StringMetricType {
     DAMERAU_LEVENSHTEIN_DISTANCE,
 
     /**
-     * The Hamming distance is the minimum number of substitutions required to change one string into the other, or the
-     * minimum number of errors that could have transformed one string into the other.
+     * The Hamming distance is the minimum number of substitutions required to change one string into the other (with
+     * the same length), or the minimum number of errors that could have transformed one string into the other (with the
+     * same length).
      */
     HAMMING_DISTANCE
 
