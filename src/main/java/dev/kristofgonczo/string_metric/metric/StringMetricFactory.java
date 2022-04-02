@@ -11,6 +11,8 @@ public interface StringMetricFactory {
                 return new LevenshteinDistanceMetric();
             case DAMERAU_LEVENSHTEIN_DISTANCE:
                 return new DamerauLevenshteinDistanceMetric();
+            case HAMMING_DISTANCE:
+                return new HammingDistanceMetric();
         }
         throw new StringMetricNotFoundException(stringMetricType);
     }
